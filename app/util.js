@@ -133,6 +133,17 @@ appendMultiple:function(parent, options){
   n = parseInt(n,10);
   if (isNaN(n)) return "00";
   n = Math.max(0,Math.min(n,255));return "0123456789ABCDEF".charAt((n-n%16)/16) + "0123456789ABCDEF".charAt(n%16);
+},
+	checkBrowser:function(){
+if(!Boolean(navigator.vendor)){
+	var noIE=document.getElementById('noIE');
+	var noWork=document.createElement('p');
+	noWork.setAttribute('style', 'text-align:center');
+	var noWorkTxt=document.createTextNode('Currently this application does not work in Internet Explorer');
+	noWork.appendChild(noWorkTxt);
+	noIE.appendChild(noWork);
+	
+}
 }
 
 
