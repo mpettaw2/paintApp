@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet", href="thepaint.css">
+        <link rel='stylesheet', href="Skeleton-2.0.4\css\normalize.css">
+        <link rel='stylesheet', href="Skeleton-2.0.4\css\skeleton.css">
+        <title>lisa's paint app!!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+    <header>
+    <h1 id='title'>a-b-c paint </h1>
+
+
+    </header>
+    <br>
+    <div id='all' class='container'>
+<div class='three columns'>
+        <div id="paintapp"></div>
+        <button id="line" class='button button-primary'>line</button>
+
+        <label >enter text:
+        <input type='text' id="txt" name="text"></label>
+        <button id="enter" class='button button-primary'>Enter</button>
+        <div id='warn'></div>
+
+        <label for='img'>img
+       <!--- <input type='file' id='loadImg' onchange='loadImg()'>--->
+        </label>
+
+<button id='stamp_rect' class='button button-primary'>stamp rectangle</button>
+<button id='stamp_circle' class='button button-primary'>stamp circle</button>
+<button id='stamp_triangle' class='button button-primary'>stamp triangle</button>
+
+
+<button id='clear' class='button button-primary'>Clear</button>
+<label >Pick a Color:
+	<input type='color' id='color_picker'>
+	</label>
+	</div>
+
+<div class='nine columns'>
+	 <canvas id="test" width="800" height="800"></canvas>
+	 </div>
+</div>
+
+<footer>
+&copy; Melisa Pettaway 2016
+<br>
+<a href='#'>My Github</a><br>
+<a href='#'>Linkedin</a>
+</footer>
+		<script src="util.js"></script>
+        <script src="paintmodules.js"></script>
+        <script src="lisa's_paint.js"></script>
+    </body>
+</html>
