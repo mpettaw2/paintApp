@@ -1,4 +1,4 @@
-
+utilEV.checkBrowser();
 var body=document.getElementById("paintapp");
 var tes=document.getElementById("test");
 var drawable=tes.getContext('2d');
