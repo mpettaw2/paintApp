@@ -2,13 +2,13 @@
 var CreateUI=function(overallParent){
 	this.overallParent=overallParent;
 	};
-	/* ui class inherets from paint, only createcanvas is forced use the overall Parent everything else you have the option to use something else
+	/* only createcanvas is forced use the overall Parent everything else you have the option to use something else
 	a lot of ui methods will be pulling from the utilEV classes, feel free to read them.
 	*/
 
 
 	CreateUI.prototype={
-		//will not read in my createElms output, fix
+		//will not read in my createElms output, need to fix
 		setCss:function(el,styles){
 			for(var prop in styles){
 				if(!styles.hasOwnProperty(prop)){
@@ -70,8 +70,8 @@ var CreateUI=function(overallParent){
 
 
 		/*
-		the point finder is only to get the current point where the mouse is at during an event
-		it does not inheret from anything.
+		the point finder willget the current point where the mouse is at during an event or set a point of your choosing.
+		it does not save points. 
 		*/
 
 		var PointFinder=function(element,event){
@@ -92,7 +92,7 @@ var CreateUI=function(overallParent){
 				return this._x;
 				},
 
-//public methods
+					//public methods
 					setPoint:function(x,y){
 						x=x||this._getCurrentX(this.event);
 						y=y||this._getCurrentY(this.event);
@@ -117,7 +117,7 @@ var CreateUI=function(overallParent){
 				};//constructor
 
 				Draw.prototype={
-
+					//testing this
 					_trackDrag:function(onMove, onEnd){
 						function end(event){
 						        removeEventListener("mousemove", onMove);
@@ -140,6 +140,7 @@ var CreateUI=function(overallParent){
 						        }
 							}
 						    },
+					//may not use this... idk
 
 							drawErase:function(event, draw){
 								 draw.globalCompositionOperation='destination-out';
