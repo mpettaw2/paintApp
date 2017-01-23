@@ -80,19 +80,31 @@ var utilEV={
     return node;
 },
 
-addEvent:function(element, typeEvent, callback){
+addEvent:function(element, typeEvent, callback, bool){
 	typeEvent=typeEvent || 'click';
+	bool=bool || false;
 	if(typeof typeEvent !== 'string'){
-		throw new Error("typeEvent will have to be a string")
+		throw new Error("typeEvent will have to be a string");
 		}
 
 		if(typeof callback !== 'function'){
 			throw new Error("callback is required for addEvent");
 			}
-	return element.addEventListener(typeEvent, callback);
+	return element.addEventListener(typeEvent, callback, bool);
 	},
-
-
+removeEvent:function(element, typeEvent, callback, bool){
+	typeEvent=typeEvent || 'click';
+	bool=bool || false;
+	if(typeof typeEvent !== 'string'){
+	throw new Error ('typeEvent will have to be a string');
+	}
+	if (typeof callback !== 'function'){
+	throw new Error ('callback is required for removeEvent');
+	}
+	return element.removeEventListener(typeEvent, callback, bool);
+},
+	
+//does not accept an array but accepts multiple arguments. 
 appendMultiple:function(parent, options){
 	var args;
 	if(arguments.length===1){
@@ -112,6 +124,7 @@ appendMultiple:function(parent, options){
 		}
 		return this; //make chainable
 	},
+	
 	//will accept multiple args
 	//these should be elements to show and hide on the DOM
 	hide:function(elem){
@@ -130,10 +143,10 @@ appendMultiple:function(parent, options){
 		},
 
 		toHex:function(n) {
-  n = parseInt(n,10);
-  if (isNaN(n)) return "00";
-  n = Math.max(0,Math.min(n,255));return "0123456789ABCDEF".charAt((n-n%16)/16) + "0123456789ABCDEF".charAt(n%16);
-},
+		  n = parseInt(n,10);
+		  if (isNaN(n)) return "00";
+		  n = Math.max(0,Math.min(n,255));return "0123456789ABCDEF".charAt((n-n%16)/16) + "0123456789ABCDEF".charAt(n%16);
+	},
 	checkBrowser:function(){
 if(!Boolean(navigator.vendor)){
 	var noIE=document.getElementById('noIE');
