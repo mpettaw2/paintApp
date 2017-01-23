@@ -1,4 +1,4 @@
-//export var ExportPaint={
+
 var CreateUI=function(overallParent){
 	this.overallParent=overallParent;
 	};
@@ -8,7 +8,7 @@ var CreateUI=function(overallParent){
 
 
 	CreateUI.prototype={
-		//will not read in my createElms output, need to fix
+		//setCss will not read in my createElms output, need to fix
 		setCss:function(el,styles){
 			for(var prop in styles){
 				if(!styles.hasOwnProperty(prop)){
@@ -70,7 +70,7 @@ var CreateUI=function(overallParent){
 
 
 		/*
-		the point finder willget the current point where the mouse is at during an event or set a point of your choosing.
+		the point finder will get the current point where the mouse is at during an event or set a point of your choosing.
 		it does not save points. 
 		*/
 
@@ -253,4 +253,4 @@ color:function(draw, input){
 }
 };
 
-//};
+
