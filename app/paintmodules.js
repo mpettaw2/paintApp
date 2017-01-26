@@ -63,8 +63,9 @@ var CreateUI=function(overallParent){
 					throw new Error("last argument should be a string");
 			}
 
-			var checkBox=utilEV.createElms('input',{type:'checkbox', [attr]:value}, txt);
-			parent.appendChild(checkBox);
+			var checkBox=utilEV.createElms('input',{type:'checkbox', [attr]:value});
+			var label=utilEV.createElms('label',null,txt,checkBox);	
+			parent.appendChild(label);
 				}
 		};
 
