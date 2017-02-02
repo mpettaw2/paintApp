@@ -152,7 +152,7 @@ if(!Boolean(navigator.vendor)){
 	var noIE=document.getElementById('noIE');
 	var noWork=document.createElement('p');
 	noWork.setAttribute('style', 'text-align:center');
-	var noWorkTxt=document.createTextNode('Currently this application does not work in Internet Explorer');
+	var noWorkTxt=document.createTextNode('Currently this application is not support for your browser');
 	noWork.appendChild(noWorkTxt);
 	noIE.appendChild(noWork);
 	
